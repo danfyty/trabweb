@@ -21,14 +21,14 @@
 
   </head>
 
-  <body ng-app="danft_app">
+  <body ng-app="app">
       <div class="container">
           <h1><small>Trabalho</small></h1>
       </div>
       <nav class="navbar navbar-inverse">
           <div class="container">
               <div class="navbar-header">
-                  <a class="navbar-brand" href="#">Home</a>
+                  <a class="navbar-brand" href="index.html">Home</a>
                   <a class="navbar-brand" href="#">My Profile</a>
                   <a class="navbar-brand" href="#">Log out</a>
               </div>
@@ -88,7 +88,7 @@
                   <div class="panel panel-default" ng-controller="trending_controller">
                       <div class="panel-heading">Trending <button type="submit" class="btn btn-xs" ng-click="refresh_trending_topics()">Refresh</button></div>
                       <div ng-repeat="topic in trending_topics | limitTo:7">
-                          <div class="panel-body">{{topic.title}}</div>
+			      <div class="panel-body"><a href="topic.html#/{{topic.title}}">{{topic.title}}</a></div>
                       </div>
                   </div>
               </div><!--/.sidebar-offcanvas-->

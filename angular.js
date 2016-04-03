@@ -1,20 +1,20 @@
 (function(angular) {
   //'use strict';
-var myApp = angular.module('danft_app', []);
+var app = angular.module('app', []);
 
 /*servico para compartilhar a variavel trending topic*/
-myApp.factory('Trending_topic', function() {
+app.factory('Trending_topic', function() {
     return {
-        title:'whatever'
+        title:'abc'
     };
 });
 
-myApp.controller('trending_controller', function($scope, Trending_topic) {
+app.controller('trending_controller', function($scope, Trending_topic) {
     $scope.trending_topics=[];
     //$scope.trending_topics[0]=Trending_topic;
     $scope.trending_topics=[
-    {title:'topico1'},
-    {title:'topico2'},
+    {title:'abc'},
+    {title:'abd'},
     {title:'topico3'},
     {title:'topico4'},
     {title:'to'},
@@ -31,20 +31,15 @@ myApp.controller('trending_controller', function($scope, Trending_topic) {
     {title:'topico4'},
     {title:'topico4'},
     ];
-    //share_trending_topic=$scope.trending_topics[0];
-    //Trending_topic=$scope.trending_topics[0];
     $scope.trending_topic=Trending_topic;
     $scope.trending_topic=$scope.trending_topics[0];
 
     /*aki, dpois vo pegar os topics de algum lugar*/
     $scope.refresh_trending_topics=function() {
-        //$scope.trending_topics[0]=0w
-        //Trending_topic=$scope.trending_topics[0];
-        //console.log(Trending_topic);
     }
 });
 
-myApp.controller('post_controller', function($scope, Trending_topic) {
+app.controller('post_controller', function($scope, Trending_topic) {
     $scope.trending_topic=Trending_topic;
     $scope.myposts=[{
         title:'Trabalho web',
@@ -62,11 +57,6 @@ myApp.controller('post_controller', function($scope, Trending_topic) {
         $("#post_text").val($("#post_text").val() + "#" + topic);
     }
 });
-
-
-
-
-
 
 } /*fim do script*/
 )(window.angular);
